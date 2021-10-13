@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import Axios from 'axios'
+import React, { useEffect } from 'react';
+import Axios from 'axios';
 
 function Favorite(props) {
     const movieId = props.movieId
