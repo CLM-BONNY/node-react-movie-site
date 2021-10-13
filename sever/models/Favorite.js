@@ -1,9 +1,8 @@
-const { Schema } = require('mongoose');
 const mongoose = require('mongoose');
 
 const favoriteSchema = mongoose.Schema({
     userFrom: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
     movieId: {
