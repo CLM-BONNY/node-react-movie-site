@@ -6,7 +6,7 @@ import GridCards from '../commons/GridCards';
 import { Row } from 'antd';
 import Favorite from './Sections/Favorite';
 
-export const MovieDetail = (props) => {
+function MovieDetail(props) {
     let movieId = props.match.params.movieId
     const [Movie, setMovie] = useState([])
     const [Casts, setCasts] = useState([])
