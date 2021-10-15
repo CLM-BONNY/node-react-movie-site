@@ -5,13 +5,10 @@ import { Popover } from 'antd';
 import { IMAGE_BASE_URL } from '../../Config';
 
 function FavoritePage() {
-
     const [Favorites, setFavorites] = useState([])
 
     useEffect(() => {
-
         fetchFavoredMovie()
-
     }, [])
 
 
@@ -26,14 +23,8 @@ function FavoritePage() {
             })
     }
 
-
-
     const onClickDelete = (movieId, userFrom) => {
-
-        const variables = {
-            movieId,
-            userFrom
-        }
+        const variables = { movieId, userFrom }
 
         Axios.post('/api/favorite/removeFromFavorite', variables)
             .then(response => {
@@ -43,22 +34,17 @@ function FavoritePage() {
                     alert("리스트에서 지우는데 실패했습니다.")
                 }
             })
-
-
     }
 
 
     const renderCards = Favorites.map((favorite, index) => {
-
         const content = (
             <div>
                 {favorite.moviePost ?
-
                     <img src={`${IMAGE_BASE_URL}w500${favorite.moviePost}`} /> : "no image"
                 }  
             </div>
         )
-
 
         return <tr key={index}>
 
@@ -72,27 +58,21 @@ function FavoritePage() {
         </tr>
     })
 
-
-
     return (
         <div style={{ width: '85%', margin: '3rem auto' }}>
             <h2> Favorite Movies </h2>
             <hr />
 
             <table>
-                <thead>
+                <tbody>
                     <tr>
                         <th>Movie Title</th>
                         <th>Movie RunTime</th>
                         <td>Remove from favorites</td>
                     </tr>
-                </thead>
+                </tbody>
                 <tbody>
-
-
                     {renderCards}
-
-
                 </tbody>
             </table>
         </div>
